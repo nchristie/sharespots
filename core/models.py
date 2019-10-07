@@ -2,17 +2,10 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
 
-class Rating(models.Model):
-    rate = models.IntegerField(
-        blank=True, null=True,
-        validators=[MaxValueValidator(5), MinValueValidator(0)]
-    )
-
-    def __str__(self):
-        return str(self.rate)
 
 
 class Venue(models.Model):
+    RATING_CHOICES = [(x, str(x)) for x in range(1, 6)]
 
     name = models.CharField(max_length=150)
     featured = models.BooleanField(default=False)
@@ -21,11 +14,13 @@ class Venue(models.Model):
     post_code = models.CharField(max_length=10)
     description = models.TextField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
-    wifi = models.OneToOneField('Rating', on_delete=models.CASCADE, null=True, related_name='wifi')
-    food = models.OneToOneField('Rating', on_delete=models.CASCADE, null=True, related_name='food')
-    atmosphere = models.OneToOneField('Rating', on_delete=models.CASCADE, null=True, related_name='atmosphere')
-    sockets = models.OneToOneField('Rating', on_delete=models.CASCADE, null=True, related_name='sockets')
-    coffee = models.OneToOneField('Rating', on_delete=models.CASCADE, null=True, related_name='coffee')
+
+    wifi = models.IntegerField(choices=RATING_CHOICES)
+    food = models.IntegerField(choices=RATING_CHOICES)
+    atmosphere = models.IntegerField(choices=RATING_CHOICES)
+    sockets = models.IntegerField(choices=RATING_CHOICES)
+    coffee = models.IntegerField(choices=RATING_CHOICES)
+    
     slogan = models.CharField(max_length=250, null=True)
 
 
