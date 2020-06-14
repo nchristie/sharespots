@@ -17,85 +17,99 @@
            <img src= {{ venue_detail.image }} width="600" height="300">
         {% endif %}
     </div>
+
     <h2>Amenity Ratings:</h2>
     
-    <div>
-    <span>Wifi:</span>
-    {% for i in 12345|make_list %}       
-        {% if forloop.counter <= venue_detail.wifi.rate %}
-                <span class="star--filled">
-                    ★
-                </span>
-        {% else %}
-            <span class="star">
-                ☆
-            </span>
-        {% endif %}
-    {% endfor %}
+    <div class="amenity_rating">
+        <div class="amenity_rating-icon"></div>
+        <div class="amenity_rating-score">
+            {% for i in 12345|make_list %}       
+                {% if forloop.counter <= venue_detail.wifi.rate %}
+                        <span class="star--filled">
+                            ★
+                        </span>
+                {% else %}
+                    <span class="star">
+                        ☆
+                    </span>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <p class="amenity_rating-title">Wifi</p>
     </div>
 
-    <div>    
-        <span>Food:</span>
-        {% for i in 12345|make_list %}       
-        {% if forloop.counter <= venue_detail.food.rate %}
-                <span class="star--filled">
-                    ★
-                </span>
-        {% else %}
-            <span class="star">
-                ☆
-            </span>
-        {% endif %}
-        {% endfor %}        
+    <div class="amenity_rating">
+        <div class="amenity_rating-icon"></div>
+        <div class="amenity_rating-score">
+            {% for i in 12345|make_list %}       
+                {% if forloop.counter <= venue_detail.food.rate %}
+                        <span class="star--filled">
+                            ★
+                        </span>
+                {% else %}
+                    <span class="star">
+                        ☆
+                    </span>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <p class="amenity_rating-title">Food</p>
     </div>
-    
-    
-    <div>    
-        <span>Atmosphere:</span>
-        {% for i in 12345|make_list %}       
-        {% if forloop.counter <= venue_detail.atmosphere.rate %}
-                <span class="star--filled">
-                    ★
-                </span>
-        {% else %}
-            <span class="star">
-                ☆
-            </span>
-        {% endif %}
-        {% endfor %}        
-    </div>
-    
-    
-    <div>    
-        <span>Power socket access:</span>
-        {% for i in 12345|make_list %}       
-        {% if forloop.counter <= venue_detail.sockets.rate %}
-                <span class="star--filled">
-                    ★
-                </span>
-        {% else %}
-            <span class="star">
-                ☆
-            </span>
-        {% endif %}
-        {% endfor %}        
-    </div>
-        
 
-    <div>    
-        <span>Coffee:</span>
-        {% for i in 12345|make_list %}       
-        {% if forloop.counter <= venue_detail.coffee.rate %}
-                <span class="star--filled">
-                    ★
-                </span>
-        {% else %}
-            <span class="star">
-                ☆
-            </span>
-        {% endif %}
-        {% endfor %}        
+    <div class="amenity_rating">
+        <div class="amenity_rating-icon"></div>
+        <div class="amenity_rating-score">
+            {% for i in 12345|make_list %}       
+                {% if forloop.counter <= venue_detail.atmosphere.rate %}
+                        <span class="star--filled">
+                            ★
+                        </span>
+                {% else %}
+                    <span class="star">
+                        ☆
+                    </span>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <p class="amenity_rating-title">Atmosphere</p>
     </div>
+    
+    <div class="amenity_rating">
+        <div class="amenity_rating-icon"></div>
+        <div class="amenity_rating-score">
+            {% for i in 12345|make_list %}       
+                {% if forloop.counter <= venue_detail.sockets.rate %}
+                        <span class="star--filled">
+                            ★
+                        </span>
+                {% else %}
+                    <span class="star">
+                        ☆
+                    </span>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <p class="amenity_rating-title">Power socket access</p>
+    </div>
+    
+    <div class="amenity_rating">
+        <div class="amenity_rating-icon"></div>
+        <div class="amenity_rating-score">
+            {% for i in 12345|make_list %}       
+                {% if forloop.counter <= venue_detail.coffee.rate %}
+                        <span class="star--filled">
+                            ★
+                        </span>
+                {% else %}
+                    <span class="star">
+                        ☆
+                    </span>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <p class="amenity_rating-title">Coffee</p>
+    </div>
+    
 
 </section>
 {% endblock %}
