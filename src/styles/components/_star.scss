@@ -1,11 +1,13 @@
 // Stars for rating systems etc.
 
 .star {
-    background: $color-light-brown;
-    height: 24px;
-    width: 24px;
-    
-    &--filled {
-        background: $color-yellow;
+    svg {
+        fill: $color-light-brown;
+        height: 20px;
+        width: 20px;
+    }
+
+    &--filled svg {
+        fill: $color-yellow;
     }
 }
